@@ -1,9 +1,29 @@
 doctype html
-html(lang="en")
-    header
-        title #{pageTitle} | WeTube
+html(lang="ne")
+    head
+        title #{pageTitle} | #{siteName}
         link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
     body
+        header
+            h1=pageTitle
+            nav
+                ul 
+                    li
+                        a(href="/") Home
+                    if loggedIn 
+                        li
+                            a(href="/logout") Log Out
+                        li 
+                            a(href="/profile") #{loggedInUser.name}'s Profile
+                    else
+                        li
+                            a(href="/join") Join
+                        li
+                            a(href="/login") Login
+                    li 
+                        a(href="/videos/upload") Upload
+                    li 
+                        a(href="/search") Search
         main
             block content
-    include partials/footer.pug
+    include partials/footer
