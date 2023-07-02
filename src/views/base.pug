@@ -1,5 +1,5 @@
 doctype html
-html(lang="ne")
+html(lang="en")
     head
         title #{pageTitle} | #{siteName}
         link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
@@ -20,12 +20,13 @@ html(lang="ne")
                             a(href="/users/logout") Log Out
                     else
                         li
-                            a(href="/join") Join
+                            a(href="join") Join
                         li
-                            a(href="/login") Login
+                            a(href="login") Login
                     li 
                         a(href="/search") Search
         main
             block content
     include partials/footer
+    block scripts
     script(src="/static/js/main.js") 
