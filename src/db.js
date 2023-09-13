@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import "./models/video";
-import "./models/user";
+import "./models/Video";
+import "./models/User";
 
 mongoose.connect(process.env.DB_URL);
 
